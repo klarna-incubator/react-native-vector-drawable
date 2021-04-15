@@ -1,0 +1,28 @@
+{
+  "name": "@klarna/react-native-vector-drawable",
+  "version": "0.1.0",
+  "description": "Android vector drawables in React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "github:klarna-incubator/react-native-vector-drawable",
+  "homepage": "https://github.com/klarna-incubator/react-native-vector-drawable",
+  "bugs": {
+    "url": "https://github.com/klarna-incubator/react-native-vector-drawable/issues"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "react-native",
+    "react",
+    "mobile",
+    "android",
+    "ui",
+    "vector",
+    "image"
+  ],
+  "author": "Joel Arvidsson",
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}

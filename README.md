@@ -1,46 +1,30 @@
-# Project Name
-> Short blurb about what your project does.
+# react-native-vector-drawable
+
+> Android vector drawables in React Native.
 
 [![Build Status][ci-image]][ci-url]
 [![License][license-image]][license-url]
 [![Developed at Klarna][klarna-image]][klarna-url]
 
+An alternative to `react-native-svg` with 5x faster renders, lighter bundle and built in dark mode support.
 
-One to two paragraph statement about your project and what it does.
-
-## First steps
-
-<details>
- <summary>Installation (for Admins)</summary>
-  
-  Currently, new repositories can be created only by a Klarna Open Source community lead. Please reach out to us if you need assistance.
-  
-  1. Create a new repository by clicking ‘Use this template’ button.
-  
-  2. Make sure your newly created repository is private.
-  
-  3. Enable Dependabot alerts in your candidate repo settings under Security & analysis. You need to enable ‘Allow GitHub to perform read-only analysis of this repository’ first.
-</details>
-
-1. Update `README.md` and `CHANGELOG.md`.
-
-2. Optionally, change `.github/CONTRIBUTING.md`.
-
-3. Do *not* edit `LICENSE`, `.github/CODE_OF_CONDUCT.md`, and `.github/SECURITY.md`.
-
-## Usage example
-
-A few motivating and useful examples of how your project can be used. Spice this up with code blocks and potentially more screenshots.
-
-_For more examples and usage, please refer to the [Docs](TODO)._
-
-## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+## Installation
 
 ```sh
-make install
-npm test
+yarn add @klarna/react-native-vector-drawable
+```
+
+## Usage
+
+```js
+import VectorDrawable from '@klarna/react-native-vector-drawable';
+
+const Component = () => (
+  <VectorDrawable
+    resourceName="ic_drawable_name"
+    style={{ width: 50, height: 50, tintColor: 'blue' }}
+  />
+);
 ```
 
 ## How to contribute
@@ -57,8 +41,8 @@ Copyright © 2021 Klarna Bank AB
 
 For license details, see the [LICENSE](LICENSE) file in the root of this project.
 
-
 <!-- Markdown link & img dfn's -->
+
 [ci-image]: https://img.shields.io/badge/build-passing-brightgreen?style=flat-square
 [ci-url]: https://github.com/klarna-incubator/TODO
 [license-image]: https://img.shields.io/badge/license-Apache%202-blue?style=flat-square

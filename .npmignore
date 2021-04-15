@@ -1,0 +1,9 @@
+.github
+example
+.DS_Store
+*.log
+.*
+*.tgz
+*.spec.js
+*.snap
+fixtures
