@@ -1,3 +1,5 @@
 import { requireNativeComponent } from 'react-native';
 
-module.exports = requireNativeComponent('RNVectorDrawable');
+const VectorDrawable = requireNativeComponent('RNVectorDrawable');
+
+export default VectorDrawable;
