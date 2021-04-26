@@ -1,6 +1,6 @@
 {
   "name": "@klarna/react-native-vector-drawable",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Android vector drawables in React Native",
   "main": "src",
   "types": "src/index.d.ts",
