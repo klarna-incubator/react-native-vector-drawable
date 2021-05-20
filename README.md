@@ -27,6 +27,13 @@ const Component = () => (
 );
 ```
 
+### Props
+
+| Prop               | Description                                                                                                                                              | Default   |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **`resourceName`** | Name of the Android vector drawable resource.                                                                                                            | _None_    |
+| **`resizeMode`**   | Determines how to resize the image when the frame doesn't match the raw image dimensions. Possible values are `cover`, `contain`, `stretch` and `center` | `contain` |
+
 ## How to contribute
 
 See our guide on [contributing](.github/CONTRIBUTING.md).
