@@ -1,12 +1,33 @@
 import * as React from 'react';
-import { ViewProps } from 'react-native';
+import {
+  ColorValue,
+  StyleProp,
+  ViewProps,
+  FlexStyle,
+  TransformsStyle,
+} from 'react-native';
+
+export type VectorDrawableResizeMode =
+  | 'cover'
+  | 'contain'
+  | 'stretch'
+  | 'center';
+
+export interface VectorDrawableStyle extends FlexStyle, TransformsStyle {
+  resizeMode?: VectorDrawableResizeMode;
+  tintColor?: ColorValue;
+  opacity?: number;
+}
 
 export interface VectorDrawableProps extends ViewProps {
   /**
    * The name of the vector drawable resource.
    */
   resourceName: string;
-  resizeMode?: 'contain' | 'cover' | 'stretch' | 'center';
+  /**
+   * Style
+   */
+  style?: StyleProp<VectorDrawableStyle>;
 }
 
 declare const VectorDrawable: React.FunctionComponent<VectorDrawableProps>;
