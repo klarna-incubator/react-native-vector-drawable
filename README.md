@@ -36,10 +36,10 @@ const Component = () => (
 
 #### Style props
 
-| Prop             | Description                                                                                                                                              | Default   |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| **`resizeMode`** | Determines how to resize the image when the frame doesn't match the raw image dimensions. Possible values are `cover`, `contain`, `stretch` and `center` | `contain` |
-| **`tintColor`**  | Changes the color of all the non-transparent pixels to the tintColor.                                                                                    | _None_    |
+| Prop             | Description                                                                                                                                              | Default |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **`resizeMode`** | Determines how to resize the image when the frame doesn't match the raw image dimensions. Possible values are `cover`, `contain`, `stretch` and `center` | `cover` |
+| **`tintColor`**  | Changes the color of all the non-transparent pixels to the tintColor.                                                                                    | _None_  |
 
 ## How to contribute
 
