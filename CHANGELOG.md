@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - yyyy-mm-dd
 
+## [0.2.1] - 2021-05-21
+
+### Changed
+
+- Move resizeMode to style props for Image compatibility.
+
 ## [0.2.0] - 2021-05-20
 
 ### Added
@@ -33,7 +39,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- Markdown link dfn's -->
 
-[unreleased]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.2.1...v0.2.1
 [0.2.0]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.1.0...v0.1.1
