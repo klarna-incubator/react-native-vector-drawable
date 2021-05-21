@@ -25,6 +25,7 @@ const App = () => {
       contentContainerStyle={styles.container}
     >
       <Text style={styles.heading}>resizeMode</Text>
+      <Example title="default" width={60} height={40} />
       <Example title="contain" width={60} height={40} resizeMode="contain" />
       <Example title="cover" width={60} height={40} resizeMode="cover" />
       <Example title="stretch" width={60} height={40} resizeMode="stretch" />

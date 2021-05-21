@@ -34,7 +34,10 @@ public class VectorDrawableManager extends SimpleViewManager<ImageView> {
 
     @Override
     protected ImageView createViewInstance(ThemedReactContext reactContext) {
-      return new ImageView(reactContext);
+      ImageView view = new ImageView(reactContext);
+      view.setCropToPadding(true);
+      view.setScaleType(toScaleType(null));
+      return view;
     }
 
     @ReactProp(name="resourceName")
@@ -46,7 +49,6 @@ public class VectorDrawableManager extends SimpleViewManager<ImageView> {
     @ReactProp(name = ViewProps.RESIZE_MODE)
     public void setResizeMode(ImageView view, @Nullable String resizeMode) {
       view.setScaleType(toScaleType(resizeMode));
-      view.setCropToPadding(true);
     }
 
     @ReactProp(name = "tintColor", customType = "Color")
@@ -59,11 +61,11 @@ public class VectorDrawableManager extends SimpleViewManager<ImageView> {
     }
 
     private ScaleType toScaleType(@Nullable String resizeModeValue) {
+      if (resizeModeValue == null || RESIZE_MODE_COVER.equals(resizeModeValue)) {
+        return ScaleType.CENTER_CROP;
+      }
       if (RESIZE_MODE_CONTAIN.equals(resizeModeValue)) {
         return ScaleType.FIT_CENTER;
-      }
-      if (RESIZE_MODE_COVER.equals(resizeModeValue)) {
-        return ScaleType.CENTER_CROP;
       }
       if (RESIZE_MODE_STRETCH.equals(resizeModeValue)) {
         return ScaleType.FIT_XY;
