@@ -92,11 +92,6 @@ public class VectorDrawableManager extends SimpleViewManager<ImageView> {
         }
 
         Drawable drawable = ContextCompat.getDrawable(context, resourceIdent);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            return (VectorDrawable) drawable;
-        } else {
-            return (BitmapDrawable) drawable;
-        }
+        return drawable;
     }
 }
