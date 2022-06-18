@@ -36,9 +36,9 @@ android {
     sourceSets {
         main {
             if (isNewArchitectureEnabled()) {
-                java.srcDirs += ['src/fabric']
+                java.srcDirs += ['src/fabric/java']
             } else {
-                java.srcDirs += ['src/paper']
+                java.srcDirs += ['src/paper/java']
             }
         }
     }
