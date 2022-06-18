@@ -21,6 +21,6 @@ public class VectorDrawablePackage implements ReactPackage {
   @Override
   @NonNull
   public List<ViewManager> createViewManagers(@NonNull final ReactApplicationContext reactContext) {
-    return Collections.singletonList(new VectorDrawableManager());
+    return Collections.singletonList(new VectorDrawableManager(reactContext));
   }
 }

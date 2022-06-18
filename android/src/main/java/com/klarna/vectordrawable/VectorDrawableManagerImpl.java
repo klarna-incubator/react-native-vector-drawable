@@ -13,54 +13,42 @@ import android.widget.ImageView.ScaleType;
 
 import com.facebook.react.common.JavascriptException;
 import com.facebook.react.bridge.JSApplicationIllegalArgumentException;
-import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.ThemedReactContext;
-import com.facebook.react.uimanager.SimpleViewManager;
-import com.facebook.react.uimanager.ViewProps;
 
 import javax.annotation.Nullable;
 
-public class VectorDrawableManager extends SimpleViewManager<ImageView> {
-    public static final String REACT_CLASS = "RNVectorDrawable";
-    private static final String RESIZE_MODE_CONTAIN = "contain";
-    private static final String RESIZE_MODE_COVER = "cover";
-    private static final String RESIZE_MODE_STRETCH = "stretch";
-    private static final String RESIZE_MODE_CENTER = "center";
+public class VectorDrawableManagerImpl {
+	public static final String NAME = "RNVectorDrawable";
 
-    @Override
-    public String getName() {
-      return REACT_CLASS;
-    }
+	public static ImageView createViewInstance(ThemedReactContext context) {
+		ImageView view = new ImageView(context);
+		view.setCropToPadding(true);
+		view.setScaleType(toScaleType(null));
+		return view;
+	}
 
-    @Override
-    protected ImageView createViewInstance(ThemedReactContext reactContext) {
-      ImageView view = new ImageView(reactContext);
-      view.setCropToPadding(true);
-      view.setScaleType(toScaleType(null));
-      return view;
-    }
+	public static void setResourceName(ImageView view, @Nullable String resourceName) {
+      	Drawable draw = createVectorDrawable(view.getContext(), resourceName);
+		view.setImageDrawable(draw);
+	}
 
-    @ReactProp(name="resourceName")
-    public void setResourceName(ImageView view, @Nullable String resourceName) {
-      Drawable draw = createVectorDrawable(view.getContext(), resourceName);
-      view.setImageDrawable(draw);
-    }
+	public static void setTintColor(ImageView view, @Nullable Integer tintColor) {
+		if (tintColor == null) {
+			view.clearColorFilter();
+		} else {
+			view.setColorFilter(tintColor, Mode.SRC_IN);
+		}
+	}
 
-    @ReactProp(name = ViewProps.RESIZE_MODE)
-    public void setResizeMode(ImageView view, @Nullable String resizeMode) {
-      view.setScaleType(toScaleType(resizeMode));
-    }
+	public static void setResizeMode(ImageView view, @Nullable String resizeMode) {
+		view.setScaleType(toScaleType(resizeMode));
+	}
 
-    @ReactProp(name = "tintColor", customType = "Color")
-    public void setTintColor(ImageView view, @Nullable Integer tintColor) {
-      if (tintColor == null) {
-        view.clearColorFilter();
-      } else {
-        view.setColorFilter(tintColor, Mode.SRC_IN);
-      }
-    }
-
-    private ScaleType toScaleType(@Nullable String resizeModeValue) {
+	private static final String RESIZE_MODE_CONTAIN = "contain";
+  private static final String RESIZE_MODE_COVER = "cover";
+  private static final String RESIZE_MODE_STRETCH = "stretch";
+  private static final String RESIZE_MODE_CENTER = "center";
+	private static ScaleType toScaleType(@Nullable String resizeModeValue) {
       if (resizeModeValue == null || RESIZE_MODE_COVER.equals(resizeModeValue)) {
         return ScaleType.CENTER_CROP;
       }
@@ -78,7 +66,7 @@ public class VectorDrawableManager extends SimpleViewManager<ImageView> {
           "Invalid resize mode: '" + resizeModeValue + "'");
     }
 
-    private Drawable createVectorDrawable(Context context, String resourceName) throws JavascriptException{
+	private static Drawable createVectorDrawable(Context context, String resourceName) throws JavascriptException {
         int resourceIdent;
         String packageName = context.getPackageName();
         resourceIdent = context.getResources()
