@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
+import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.module.annotations.ReactModule;
 
 import javax.annotation.Nullable;
