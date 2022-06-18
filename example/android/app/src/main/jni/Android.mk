@@ -30,8 +30,7 @@ LOCAL_SHARED_LIBRARIES := libjsi \
     libreact_render_componentregistry \
     libreact_render_debug \
     libruntimeexecutor \
-    libreact_codegen_rncore \
-    libreact_codegen_samplelibrary
+    libreact_codegen_rncore
 
 LOCAL_CFLAGS := \
     -DLOG_TAG=\"ReactNative\"
