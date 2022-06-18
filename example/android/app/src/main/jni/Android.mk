@@ -1,7 +1,6 @@
 THIS_DIR := $(call my-dir)
 
 include $(REACT_ANDROID_DIR)/Android-prebuilt.mk
-include $(GENERATED_SRC_DIR)/codegen/jni/Android.mk
 
 include $(CLEAR_VARS)
 
@@ -9,8 +8,8 @@ LOCAL_PATH := $(THIS_DIR)
 LOCAL_MODULE := example_appmodules
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH) $(GENERATED_SRC_DIR)/codegen/jni
-LOCAL_SRC_FILES := $(wildcard $(LOCAL_PATH)/*.cpp) $(wildcard $(GENERATED_SRC_DIR)/codegen/jni/*.cpp)
-LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH) $(GENERATED_SRC_DIR)/codegen/jni
+LOCAL_SRC_FILES := $(wildcard $(LOCAL_PATH)/*.cpp)
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
 
 # Please note as one of the library listed is libreact_codegen_samplelibrary
 # This name will be generated as libreact_codegen_<library-name>
