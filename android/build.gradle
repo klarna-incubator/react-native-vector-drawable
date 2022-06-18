@@ -31,14 +31,43 @@ android {
         minSdkVersion safeExtGet('minSdkVersion', 18)
         targetSdkVersion safeExtGet('targetSdkVersion', 30)
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+
+        if (isNewArchitectureEnabled()) {
+            var appProject = rootProject.allprojects.find { it.plugins.hasPlugin('com.android.application') }
+            externalNativeBuild {
+                ndkBuild {
+                    arguments "APP_PLATFORM=android-21",
+                            "APP_STL=c++_shared",
+                            "NDK_TOOLCHAIN_VERSION=clang",
+                            "GENERATED_SRC_DIR=${appProject.buildDir}/generated/source",
+                            "PROJECT_BUILD_DIR=${appProject.buildDir}",
+                            "REACT_ANDROID_DIR=${appProject.rootDir}/../node_modules/react-native/ReactAndroid",
+                            "REACT_ANDROID_BUILD_DIR=${appProject.rootDir}/../node_modules/react-native/ReactAndroid/build"
+                    cFlags "-Wall", "-Werror", "-fexceptions", "-frtti", "-DWITH_INSPECTOR=1"
+                    cppFlags "-std=c++17"
+                    targets "vectordrawable_modules"
+                }
+            }
+        }
     }
 
+    if (isNewArchitectureEnabled()) {
+        externalNativeBuild {
+            ndkBuild {
+                path "src/main/jni/Android.mk"
+            }
+        }
+    }
+    packagingOptions {
+        // See: https://github.com/software-mansion/react-native-screens/blob/main/android/build.gradle#L90
+        exclude "**/libreact_render*.so"
+    }
     sourceSets {
         main {
             if (isNewArchitectureEnabled()) {
                 java.srcDirs += ['src/fabric/java']
             } else {
-                java.srcDirs += ['src/paper/java']
+                java.srcDirs += ['src/paper/java', 'build/generated/source/codegen/java']
             }
         }
     }
