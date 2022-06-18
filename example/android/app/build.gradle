@@ -207,6 +207,11 @@ android {
                 }
             }
         }
+
+        packagingOptions {
+            pickFirst '**/libhermes.so'
+            pickFirst '**/libjsc.so'
+        }
     }
 
     splits {
