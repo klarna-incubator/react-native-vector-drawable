@@ -51,7 +51,7 @@ See our [changelog](CHANGELOG.md).
 
 ## License
 
-Copyright © 2021 Klarna Bank AB
+Copyright © 2022 Klarna Bank AB
 
 For license details, see the [LICENSE](LICENSE) file in the root of this project.
 
