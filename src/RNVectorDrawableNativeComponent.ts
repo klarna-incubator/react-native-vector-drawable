@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 // @ts-ignore
-import {WithDefault} from 'react-native/Libraries/Types/CodegenTypes';
+import { WithDefault } from 'react-native/Libraries/Types/CodegenTypes';
 // @ts-ignore
 import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
 
