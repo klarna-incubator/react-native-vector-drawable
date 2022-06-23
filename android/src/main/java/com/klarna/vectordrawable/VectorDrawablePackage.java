@@ -13,20 +13,20 @@ import java.util.List;
 
 @SuppressWarnings("unused")
 public class VectorDrawablePackage implements ReactPackage {
-  @Override
-  @NonNull
-  public List<NativeModule> createNativeModules(@NonNull final ReactApplicationContext reactContext) {
-    if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
-      // TODO: Remove when auto-linking will support Fabric modules
-      // See: https://github.com/software-mansion/react-native-screens/blob/main/android/src/main/java/com/swmansion/rnscreens/RNScreensPackage.kt#L16
-      SoLoader.loadLibrary("vectordrawable_modules");
+    @Override
+    @NonNull
+    public List<NativeModule> createNativeModules(@NonNull final ReactApplicationContext reactContext) {
+        if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
+            // TODO: Remove when auto-linking will support Fabric modules
+            // See: https://github.com/software-mansion/react-native-screens/blob/main/android/src/main/java/com/swmansion/rnscreens/RNScreensPackage.kt#L16
+            SoLoader.loadLibrary("vectordrawable_modules");
+        }
+        return Collections.emptyList();
     }
-    return Collections.emptyList();
-  }
 
-  @Override
-  @NonNull
-  public List<ViewManager> createViewManagers(@NonNull final ReactApplicationContext reactContext) {
-    return Collections.singletonList(new VectorDrawableManager(reactContext));
-  }
+    @Override
+    @NonNull
+    public List<ViewManager> createViewManagers(@NonNull final ReactApplicationContext reactContext) {
+        return Collections.singletonList(new VectorDrawableManager(reactContext));
+    }
 }
