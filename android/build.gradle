@@ -10,6 +10,21 @@ buildscript {
     }
 }
 
+static def findNodeModules(baseDir) {
+    def basePath = baseDir.toPath().normalize()
+    // Node's module resolution algorithm searches up to the root directory,
+    // after which the base path will be null
+    while (basePath) {
+        def nodeModulesPath = Paths.get(basePath.toString(), "node_modules")
+        def reactNativePath = Paths.get(nodeModulesPath.toString(), "react-native")
+        if (nodeModulesPath.toFile().exists() && reactNativePath.toFile().exists()) {
+            return nodeModulesPath.toString()
+        }
+        basePath = basePath.getParent()
+    }
+    throw new GradleException("Unable to locate node_modules")
+}
+
 def isNewArchitectureEnabled() {
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
@@ -22,6 +37,8 @@ if (isNewArchitectureEnabled()) {
 def safeExtGet(prop, fallback) {
     rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
 }
+
+def nodeModules = findNodeModules(projectDir)
 
 android {
     compileSdkVersion safeExtGet('compileSdkVersion', 30)
@@ -41,8 +58,8 @@ android {
                             "NDK_TOOLCHAIN_VERSION=clang",
                             "GENERATED_SRC_DIR=${appProject.buildDir}/generated/source",
                             "PROJECT_BUILD_DIR=${appProject.buildDir}",
-                            "REACT_ANDROID_DIR=${appProject.rootDir}/../node_modules/react-native/ReactAndroid",
-                            "REACT_ANDROID_BUILD_DIR=${appProject.rootDir}/../node_modules/react-native/ReactAndroid/build"
+                            "REACT_ANDROID_DIR=${nodeModules}/react-native/ReactAndroid",
+                            "REACT_ANDROID_BUILD_DIR=${nodeModules}/react-native/ReactAndroid/build"
                     cFlags "-Wall", "-Werror", "-fexceptions", "-frtti", "-DWITH_INSPECTOR=1"
                     cppFlags "-std=c++17"
                     targets "vectordrawable_modules"
