@@ -121,5 +121,7 @@ if (isNewArchitectureEnabled()) {
         jsRootDir = file("../src/")
         libraryName = "vectordrawable"
         codegenJavaPackageName = "com.klarna"
+        reactNativeDir = rootProject.file("../node_modules/react-native/")
+        codegenDir = rootProject.file("../node_modules/react-native-codegen/")
     }
 }
