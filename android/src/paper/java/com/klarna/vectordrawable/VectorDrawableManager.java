@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 public class VectorDrawableManager extends SimpleViewManager<ImageView> {
     ReactApplicationContext mCallerContext;
 
-    public ColoredViewManager(ReactApplicationContext reactContext) {
+    public VectorDrawableManager(ReactApplicationContext reactContext) {
         mCallerContext = reactContext;
     }
 
