@@ -1,19 +1,11 @@
 package com.klarna.vectordrawable;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.PorterDuff.Mode;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
-import android.os.Build;
-import androidx.core.content.ContextCompat;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
-
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
-import com.facebook.react.module.annotations.ReactModule;
-
+import com.facebook.react.uimanager.ViewProps;
+import com.facebook.react.uimanager.annotations.ReactProp;
 import javax.annotation.Nullable;
 
 public class VectorDrawableManager extends SimpleViewManager<ImageView> {
