@@ -37,7 +37,7 @@ public class VectorDrawableManager extends SimpleViewManager<ImageView>
 
     @NonNull
     @Override
-    protected ImageView createViewInstance(ThemedReactContext context) {
+    protected ImageView createViewInstance(@NonNull ThemedReactContext context) {
         return VectorDrawableManagerImpl.createViewInstance(context);
     }
 
