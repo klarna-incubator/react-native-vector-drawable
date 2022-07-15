@@ -14,6 +14,17 @@ An alternative to `react-native-svg` with 5x faster renders, lighter bundle and 
 yarn add @klarna/react-native-vector-drawable
 ```
 
+<!-- Taken from https://github.com/software-mansion/react-native-screens/blob/main/README-Fabric.md -->
+### Fabric installation
+
+This library supports React Native New Architecture (aka Fabric). To use this library with your Fabric application, you have to:
+
+1. Add latest `@klarna/react-native-vector-drawable`
+2. on iOS:
+   - Install pods using `RCT_NEW_ARCH_ENABLED=1 pod install` – this is the same command you run to prepare a Fabric build but you also need to run it after a new native library gets added.
+3. on Android:
+   - There are no additional steps required so long you app is configured to build with Fabric – this is typically configured by setting `newArchEnabled=true` in `gradle.properties` file in your project.
+
 ## Usage
 
 ```js
@@ -51,7 +62,7 @@ See our [changelog](CHANGELOG.md).
 
 ## License
 
-Copyright © 2021 Klarna Bank AB
+Copyright © 2022 Klarna Bank AB
 
 For license details, see the [LICENSE](LICENSE) file in the root of this project.
 

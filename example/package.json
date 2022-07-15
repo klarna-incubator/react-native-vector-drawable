@@ -11,9 +11,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "17.0.1",
-    "react-native": "0.64.0",
-    "@klarna/react-native-vector-drawable": "*"
+    "@klarna/react-native-vector-drawable": "*",
+    "react": "18.0.0",
+    "react-native": "0.69.0",
+    "react-native-gradle-plugin": "^0.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

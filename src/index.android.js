@@ -1,5 +1,9 @@
 import { requireNativeComponent } from 'react-native';
 
-const VectorDrawable = requireNativeComponent('RNVectorDrawable');
+const isFabricEnabled = global.nativeFabricUIManager != null;
 
-export default VectorDrawable;
+const RNVectorDrawable = isFabricEnabled
+  ? require('./RNVectorDrawableNativeComponent').default
+  : requireNativeComponent('RNVectorDrawable');
+
+export default RNVectorDrawable;
