@@ -3,10 +3,7 @@ package com.klarna.vectordrawable;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff.Mode;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
-import android.os.Build;
 import androidx.core.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -78,12 +75,6 @@ public class VectorDrawableManagerImpl {
             throw new JavascriptException("Unable to find resource " + resourceName + " in " + packageName);
         }
 
-        Drawable drawable = ContextCompat.getDrawable(context, resourceIdent);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            return (VectorDrawable) drawable;
-        } else {
-            return (BitmapDrawable) drawable;
-        }
+        return ContextCompat.getDrawable(context, resourceIdent);
     }
 }
