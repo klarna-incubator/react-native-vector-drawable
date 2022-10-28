@@ -15,6 +15,7 @@ yarn add @klarna/react-native-vector-drawable
 ```
 
 <!-- Taken from https://github.com/software-mansion/react-native-screens/blob/main/README-Fabric.md -->
+
 ### Fabric installation
 
 This library supports React Native New Architecture (aka Fabric). To use this library with your Fabric application, you have to:
@@ -59,6 +60,10 @@ See our guide on [contributing](.github/CONTRIBUTING.md).
 ## Release History
 
 See our [changelog](CHANGELOG.md).
+
+## Deployment
+
+Update version in `package.json` and merge to master. This will publish the package to NPM, create a draft release on GitHub and a version tag. Edit the release with additional information and publish it.
 
 ## License
 
