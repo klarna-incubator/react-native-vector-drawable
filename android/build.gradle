@@ -43,6 +43,7 @@ def safeExtGet(prop, fallback) {
 def nodeModules = findNodeModules(projectDir)
 
 android {
+    namespace "com.klarna.vectordrawable"
     compileSdkVersion safeExtGet('compileSdkVersion', 30)
     buildToolsVersion safeExtGet('buildToolsVersion', "30.0.2")
 
