@@ -1,8 +1,30 @@
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import VectorDrawable from '@klarna/react-native-vector-drawable';
+import {
+  ColorValue,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import VectorDrawable, {
+  VectorDrawableResizeMode,
+} from '@klarna/react-native-vector-drawable';
 
-const Example = ({ title, resizeMode, tintColor, width = 35, height = 30 }) => {
+interface ExampleProps {
+  title: string;
+  resizeMode?: VectorDrawableResizeMode;
+  tintColor?: ColorValue;
+  width?: number;
+  height?: number;
+}
+const Example = ({
+  title,
+  resizeMode,
+  tintColor,
+  width = 35,
+  height = 30,
+}: ExampleProps) => {
   const style = {
     width,
     height,

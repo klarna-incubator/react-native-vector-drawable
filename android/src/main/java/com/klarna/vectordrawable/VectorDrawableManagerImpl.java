@@ -15,6 +15,7 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import javax.annotation.Nullable;
 
 public class VectorDrawableManagerImpl {
+
     public static final String NAME = "RNVectorDrawable";
 
     public static ImageView createViewInstance(ThemedReactContext context) {
