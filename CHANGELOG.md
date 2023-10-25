@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - yyyy-mm-dd
 
+## [0.5.0] - 2023-10-25
+
+### Fixed
+
+- Fabric support on React Native 0.71+. This is a breaking change for fabric on 0.70 and lower, however paper/old arch is unaffected.
+
 ## [0.4.0] - 2022-07-15
 
 ### Added
@@ -55,7 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- Markdown link dfn's -->
 
-[unreleased]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.4.0...HEAD
+[unreleased]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/klarna-incubator/react-native-vector-drawable/compare/v0.2.0...v0.2.1
