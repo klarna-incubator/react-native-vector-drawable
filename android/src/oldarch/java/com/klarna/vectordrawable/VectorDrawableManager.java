@@ -42,4 +42,9 @@ public class VectorDrawableManager extends SimpleViewManager<ImageView> {
     public void setTintColor(ImageView view, @Nullable Integer tintColor) {
         VectorDrawableManagerImpl.setTintColor(view, tintColor);
     }
+
+    @ReactProp(name="testID")
+    public void setTestId(ImageView view, String testID) {
+        VectorDrawableManagerImpl.setTestId(view, testID);
+    }
 }

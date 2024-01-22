@@ -42,6 +42,10 @@ public class VectorDrawableManagerImpl {
         view.setScaleType(toScaleType(resizeMode));
     }
 
+    public void setTestId(ImageView view, String testID) {
+        view.setTag(testID);
+    }
+
     private static final String RESIZE_MODE_CONTAIN = "contain";
     private static final String RESIZE_MODE_COVER = "cover";
     private static final String RESIZE_MODE_STRETCH = "stretch";
