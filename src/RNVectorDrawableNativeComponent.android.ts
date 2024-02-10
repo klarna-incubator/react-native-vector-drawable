@@ -1,10 +1,4 @@
-import {
-  ViewProps,
-  FlexStyle,
-  TransformsStyle,
-  ColorValue,
-  HostComponent,
-} from 'react-native';
+import { ViewProps, ColorValue, HostComponent } from 'react-native';
 
 // @ts-ignore
 import { WithDefault } from 'react-native/Libraries/Types/CodegenTypes';
