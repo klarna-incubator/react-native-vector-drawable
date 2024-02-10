@@ -27,15 +27,3 @@ jobs:
           token: ${{ secrets.NPM_PUBLISH_TOKEN }}
           access: public
           provenance: true
-      - name: Create release
-        if: steps.publish.outputs.type
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.publish.outputs.version }}
-          release_name: ${{ steps.publish.outputs.version }}
-          body: ${{ steps.publish.outputs.version }}
-          draft: true
-          prerelease: false
