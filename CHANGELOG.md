@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - yyyy-mm-dd
 
+## [0.5.1] - 2024-02-10
+
+### Fixed
+
+- Fix build error when using Fabric on iOS.
+
 ## [0.5.0] - 2023-10-25
 
 ### Fixed
